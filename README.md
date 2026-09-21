@@ -45,8 +45,9 @@ fpga-modules/
 
 ```bash
 cd sim
+mkdir -p ../prj/icarus    # tb 的 VCD 波形输出目录，必须先创建
 iverilog -g2012 -o tb_ring_buffer.vvp tb_ring_buffer.v ../rtl/ring_buffer.v
-vvp tb_ring_buffer.vvp
+vvp tb_ring_buffer.vvp    # 输出 PASS 即通过
 ```
 
 ### 方式三：Vivado / 其他工具

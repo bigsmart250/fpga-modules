@@ -10,6 +10,7 @@
 |---|---|---|
 | `DATA_WIDTH` | 8 | 数据位宽 |
 | `DATA_DEPTH` | 16 | 深度，最小 2 |
+| `ADDR_WIDTH` | 自动推导 | 地址位宽，由 `DATA_DEPTH` 推导，一般无需手动指定 |
 
 ### 端口
 
@@ -25,7 +26,7 @@
 
 ### ⚠ 已知可移植性问题
 
-端口列表中使用了在模块体内才定义的 `localparam ADDR_WIDTH`。Vivado 可综合，但不符合 IEEE 1800 对 ANSI 端口引用的规则，部分工具（iverilog/yosys 对此敏感）可能报错。修复方式是把 `ADDR_WIDTH` 提升为 parameter port（`#(parameter ADDR_WIDTH = ...)` 由上层传入）或改用非 ANSI 端口风格。
+（已于 v3.0.0 仓库版修复）早期版本曾在端口列表中引用模块体内定义的 `localparam ADDR_WIDTH`，Vivado 可综合但不符合 IEEE 1800。现 `ADDR_WIDTH` 已提升为由 `DATA_DEPTH` 推导的 parameter port。
 
 ## packet — 按包号输出的 AXI-Stream 数据源
 
