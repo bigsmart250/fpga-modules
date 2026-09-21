@@ -1,0 +1,16 @@
+# Digital IDE / 仿真 / 综合产物
+*.json.netlist
+prj/
+*.vvp
+*.vcd
+*.wdb
+*.wlf
+*.mti
+vsim/
+work/
+xsim.dir/
+*.jou
+*.log
+*.str
+.Xil/
+*.bak
