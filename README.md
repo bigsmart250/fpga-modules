@@ -8,13 +8,12 @@
 
 | 模块 | 功能 | 接口 | 验证状态 |
 |---|---|---|---|
-| `edge_detection` | 异步信号同步 + 边沿检测，输出上升/下降/双沿单周期脉冲 | 电平/脉冲 | 仿真验证 |
-| `freq_divider` | 整数分频，输出分频时钟与使能标志，极性可配 | 电平 | 仿真验证 |
-| `any_freq_divider` | 相位累加器实现的任意比例分频使能发生器 | 电平 | 仿真验证 |
-| `uart_tx` | UART 发送，支持 1/2 停止位、奇/偶校验 | AXI-Stream 从 | 仿真验证 |
-| `uart_rx` | UART 接收，带起始/校验/停止位错误标志 | AXI-Stream 主 | 仿真验证 |
-| `ring_buffer` | AXI-Stream 同步 FIFO，支持同拍读写 | AXI-Stream 主从 | 仿真 + 上板（Zynq 7020） |
-| `packet` | 按包号输出 ROM 包内容的 AXI-Stream 数据源 | AXI-Stream 主从 | 仿真验证 |
+| `edge_detection` | 异步信号同步 + 边沿检测，输出上升/下降/双沿单周期脉冲 | 电平/脉冲 | 上板验证 |
+| `freq_divider` | 整数分频，输出分频时钟与使能标志，极性可配 | 电平 | 上板验证 |
+| `any_freq_divider` | 相位累加器实现的任意比例分频使能发生器 | 电平 | 上板验证 |
+| `uart_tx` | UART 发送，支持 1/2 停止位、奇/偶校验 | AXI-Stream 从 | 上板验证 |
+| `uart_rx` | UART 接收，带起始/校验/停止位错误标志 | AXI-Stream 主 | 上板验证 |
+| `ring_buffer` | AXI-Stream 同步 FIFO，支持同拍读写 | AXI-Stream 主从 | 上板验证（Zynq 7020） |
 
 ## 仓库结构
 
